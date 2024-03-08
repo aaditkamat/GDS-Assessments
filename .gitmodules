@@ -1,3 +1,6 @@
 [submodule "assessment1"]
 	path = assessment1
 	url = https://github.com/aaditkamat/assessment1
+[submodule "assessment2"]
+	path = assessment2
+	url = https://github.com/aaditkamat/assessment2
