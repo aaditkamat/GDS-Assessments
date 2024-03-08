@@ -1,14 +1,12 @@
-from flask import Flask
+import functions_framework
 import json
 import requests
 import pathlib
 import os
 
-app = Flask(__name__)
-
-@app.route("/users")
-def display_users():
-    # Use a cached version of the JSON file if it already exists
+# Register an HTTP function with the Functions Framework
+@functions_framework.http
+def get_users(request):
     if pathlib.Path('data/users.json').exists():
         with open('data/users.json', mode='r') as file:
             users_data = json.load(file)
