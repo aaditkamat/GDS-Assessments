@@ -18,7 +18,9 @@ def display_users():
         r = requests.get(url)
         if r.status_code == 200:
             users_data = r.json()
-            os.makedirs('data', exist_ok=True) #
+             # Even if the data directory exists, create it again to create the JSON file 
+             # from scratch
+            os.makedirs('data', exist_ok=True)
             with open('data/users.json', mode='w') as file:
                 json.dump(users_data, file) 
             return users_data
